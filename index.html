@@ -6,104 +6,116 @@
     <title>軽井沢ヘルスケアアイデア募集</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
+        /* 基本スタイル */
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2486C6, #3DB4FB, #5CE1E6);
-            color: white;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #333;
+            background: #2486C6;
+            background-attachment: fixed;
             text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
+            margin: 0;
+            padding: 0;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .header {
-            background: #00497a;
-            padding: 20px;
-            font-size: 2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .hero {
-            padding: 60px 20px;
-        }
-        .hero img {
+
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
             width: 100%;
-            max-width: 600px;
-            border-radius: 20px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
-        .hero h2 {
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+
+        nav a:hover {
+            color: #2486C6;
+        }
+
+        /* メインビジュアル */
+        .main-visual {
+            padding: 100px 20px 60px;
+            text-align: center;
+            background: url('main-visual.jpg') no-repeat center/cover;
+            color: white;
+        }
+
+        .main-visual h1 {
             font-size: 2.5rem;
-            margin-top: 20px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
         }
+
+        .main-visual p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* セクション */
         .section {
             background: #fff;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 40px;
             margin: 20px auto;
-            max-width: 80%;
-            backdrop-filter: blur(10px);
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            font-size: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
-        
+
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-left: 5px solid #2486C6;
+            padding-left: 10px;
+            color: #2486C6;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-top: 5px;
+        }
+
+        /* ボタン */
         .btn-link {
             display: inline-block;
-            padding: 12px 25px;
-            background: #fff;
-            color: #2486C6;
+            padding: 12px 20px;
+            background: #2486C6;
+            color: white;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 50px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
             transition: 0.3s;
-            margin: 10px 10px 20px 10px;
         }
+
         .btn-link:hover {
-            background: #00497a;
-            color: #fff;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
-        }
-        li{
-            color: #2486C6;
-        }
-        p{
-            color: #fff;
-        }
-        p2{
-            color: #2486C6;
-        }
-        h3{
-            color: #2486C6;
-            font-weight:bold;
-        }
-        .image-slider {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            height: 500px;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-        }
-        .image-slider img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
-            transform: scale(1.1);
-        }
-        .image-slider img.active {
-            opacity: 1;
+            background: #005c99;
         }
 
         .card-container {
@@ -113,7 +125,7 @@
             flex-wrap: wrap;
         }
         .card {
-            background: #3DB4FB;
+            background: #fff;
             padding: 20px;
             border-radius: 10px;
             width: 300px;
@@ -125,32 +137,72 @@
         .card:hover {
             transform: scale(1.05);
         }
+
+        /* フッター */
+        footer {
+            background: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .main-visual h1 {
+                font-size: 2rem;
+            }
+
+            .main-visual p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">軽井沢地域活性化プロジェクト　チーム○○</div>
+    <!-- ヘッダー -->
+    <header>
+        <div class="logo">軽井沢ヘルスケア</div>
+        <nav>
+            <ul>
+                <li><a href="#news">News</a></li>
+                <li><a href="#survey">アンケート&アイデア募集</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="hero">
-        <div class="image-slider">
-            <img src="10801_0.jpg" class="active" alt="軽井沢のイメージ画像1">
-            <img src="10802_0.jpg" alt="軽井沢のイメージ画像2">
-            <img src="10814_0.jpg" alt="軽井沢のイメージ画像3">
-        </div>
-        <h2>✨一緒に軽井沢について考えませんか？✨</h2>
-    </div>
+    
 
-    <div class="section">
-        <h3 margin-bottom:10px>【News】</h3>
+    <!-- メインビジュアル -->
+    <section class="main-visual">
+        <h1>✨ 一緒に軽井沢について考えませんか？ ✨</h1>
+        <p>あなたのアイデアが軽井沢の未来を変えるかもしれません</p>
+    </section>
+
+    <!-- News セクション -->
+    <section class="section" id="news">
+        <h2>【News】</h2>
         <ul>
             <li>✅ 軽井沢の別荘居住者にインタビューしました</li>
-            <li>✅ 島村クリニックで学科しました</li>
+            <li>✅ 歯科クリニックを見学しました</li>
             <li>✅ アンケート調査開始しました</li>
         </ul>
-    </div>
+    </section>
 
-    <div class="section">
-        <h3>【ご協力のお願い】</h3>
+    <!-- アンケート & アイデア募集 -->
+    <section class="section" id="survey">
+        <h2>【ご協力のお願い】</h2>
         <div class="card-container">
             <div class="card">
                 <p>📌 軽井沢のヘルスケアに関するアンケート調査にご協力お願いいたします</p>
@@ -161,11 +213,11 @@
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfQgiUG7QvYNoue1GJcCou-PyRs8llujeYAZlzVlkyGDK8Hbg/viewform?usp=header" class="btn-link">💡 アイデアを投稿する</a>
             </div>
         </div>
-        <p2>ご協力いただいた方には結果を共有させていただきます。</p>
-    </div>
+        <p2>ご協力いただいた方には結果を共有させていただきます。</p>    
+    </section>
 
     <div class="section">
-        <h3>【対象者】</h3>
+        <h2>【対象者】</h2>
         <ul>
             <li>軽井沢在住の方・軽井沢に別荘をお持ちの方</li>
             <li>医療従事者の方</li>
@@ -174,18 +226,16 @@
         </ul>
     </div>
 
-    <script>
-        let images = document.querySelectorAll('.image-slider img');
-        let currentIndex = 0;
+    <!-- お問い合わせ -->
+    <section class="section" id="contact">
+        <h2>【お問い合わせ】</h2>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6paRu4KXNtst-9daiZdo6OMxHidWnJnV88xgzuY5SinCBaQ/viewform?usp=header" class="btn-link">📧 企業の方でリクエストや面談を希望の方はこちら</a>    
+    </section>
 
-        function changeImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        setInterval(changeImage, 3000);
-    </script>
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 軽井沢ヘルスケアプロジェクト. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
