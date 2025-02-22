@@ -56,16 +56,6 @@
             color: #2486C6;
         }
 
-        /* 固定ヘッダー分のオフセットを設定し、要素自体は見えなくする */
-        .anchor {
-            display: block;
-            height: 0;
-            overflow: hidden;
-            position: relative;
-            top: -60px; /* ヘッダーの高さに合わせて調整 */
-            visibility: hidden;
-        }
-
         /* メインビジュアル */
         .main-visual {
             padding: 100px 20px 60px;
@@ -111,6 +101,15 @@
 
         .section ul li {
             margin-top: 5px;
+        }
+
+        /* 各セクションにオフセットを設定（ヘッダーの高さ60pxの場合） */
+        section[id]::before {
+        content: "";
+        display: block;
+        height: 60px;       /* ヘッダーの高さ */
+        margin-top: -60px;  /* ヘッダー分上にずらす */
+        visibility: hidden;
         }
 
         /* ボタン */
@@ -199,11 +198,11 @@
         <p>あなたのアイデアが軽井沢の未来を変えるかもしれません</p>
     </section>
 
-    <!-- アンカーとしての空セクション -->
-    <section id="news" class="anchor" style="background-color: #2486C6;"></section>
+    <!-- アンカーとしての空セクション 
+    <section id="news" class="anchor" style="background-color: #2486C6;"></section>-->
 
     <!-- News セクション -->
-    <section class="section">
+    <section class="section" id="news">
         <h2>【News】</h2>
         <ul>
             <li>✅ 軽井沢の別荘居住者にインタビューしました</li>
@@ -212,10 +211,10 @@
         </ul>
     </section>
 
-    <section id="survey" class="anchor" style="background-color: #2486C6;"></section>
+    <!-- <section id="survey" class="anchor" style="background-color: #2486C6;"></section>-->
 
     <!-- アンケート & アイデア募集 -->
-    <section class="section" >
+    <section class="section" id="survey">
         <h2>【ご協力のお願い】</h2>
         <div class="card-container">
             <div class="card">
@@ -242,10 +241,10 @@
         </ul>
     </div>
 
-    <section id="contact" class="anchor" style="background-color: #2486C6;"></section>
+    <!-- <section id="contact" class="anchor" style="background-color: #2486C6;"></section>-->
 
     <!-- お問い合わせ -->
-    <section class="section">
+    <section class="section" id="contact">
         <h2>【お問い合わせ】</h2>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6paRu4KXNtst-9daiZdo6OMxHidWnJnV88xgzuY5SinCBaQ/viewform?usp=header" class="btn-link">📧 企業の方でリクエストや面談を希望の方はこちら</a>    
     </section>
