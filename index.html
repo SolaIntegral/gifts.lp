@@ -78,6 +78,7 @@
 
         /* セクション */
         .section {
+            margin-top: 80px;
             background: #fff;
             padding: 40px;
             margin: 20px auto;
@@ -248,5 +249,22 @@
         <p>&copy; 2026 軽井沢ヘルスケアプロジェクト. All rights reserved.</p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("nav a").forEach(anchor => {
+            anchor.addEventListener("click", function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                const headerHeight = document.querySelector("header").offsetHeight;
+    
+                window.scrollTo({
+                    top: targetElement.offsetTop - headerHeight - 20,  // 余裕を持たせる
+                    behavior: "smooth"
+                });
+            });
+        });
+    });
+    </script>>
 </body>
 </html>
