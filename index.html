@@ -56,6 +56,16 @@
             color: #2486C6;
         }
 
+        /* 固定ヘッダー分のオフセットを設定し、要素自体は見えなくする */
+        .anchor {
+            display: block;
+            height: 0;
+            overflow: hidden;
+            position: relative;
+            top: -60px; /* ヘッダーの高さに合わせて調整 */
+            visibility: hidden;
+        }
+
         /* メインビジュアル */
         .main-visual {
             padding: 100px 20px 60px;
@@ -189,8 +199,8 @@
         <p>あなたのアイデアが軽井沢の未来を変えるかもしれません</p>
     </section>
 
-    <section class="section" id="news" style="background-color: #2486C6; display: none;"></section>
-
+    <!-- アンカーとしての空セクション -->
+    <section id="news" class="anchor" style="background-color: #2486C6;"></section>
 
     <!-- News セクション -->
     <section class="section">
@@ -202,8 +212,7 @@
         </ul>
     </section>
 
-    <section class="section" id="survey" style="background-color: #2486C6; display: none;"></section>
-
+    <section id="survey" class="anchor" style="background-color: #2486C6;"></section>
 
     <!-- アンケート & アイデア募集 -->
     <section class="section" >
@@ -233,7 +242,7 @@
         </ul>
     </div>
 
-    <section class="section"  id="contact" style="background-color: #2486C6; display: none;"></section>
+    <section id="contact" class="anchor" style="background-color: #2486C6;"></section>
 
     <!-- お問い合わせ -->
     <section class="section">
